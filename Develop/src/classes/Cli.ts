@@ -250,7 +250,7 @@ class Cli {
           answers.model,
           parseInt(answers.year),
           parseInt(answers.weight),
-          parseInt(answers.topSpeed),
+          parseInt(answers.topSpeed), 
           [],
         );
         this.vehicles.push(motorbike);
@@ -367,16 +367,33 @@ class Cli {
               this.vehicles[i].reverse();
             }
           }
-        } else if (answers.action === 'Tow') {
+        } else if (answers.action === 'Tow'){
+        // (this.vehicles instanceof Truck) {
+        //   if (answers.action === 'Tow') {
+        //     this.findVehicleToTow;}
+        //     else {
+        //       return; }
           if (this.vehicles instanceof Truck) {
             this.findVehicleToTow;
             return;
           }
-        } else if (answers.action === 'Wheelie') {
-          if (this.vehicles instanceof Motorbike) {
+          // this.findVehicleToTow;
+          // if (!(this instanceof Truck)) {
+          //   throw new Error('this vehicle is unable to tow');
+          // }
+        } else if (this.vehicles instanceof Motorbike) {
+          answers.action === 'Wheelie';{
             this.wheelie();
             return;
           }
+          // if (this.vehicles instanceof Motorbike) {
+          //   this.wheelie();
+          //   return;
+          // }
+          // this.wheelie();
+          // if (!(this instanceof Motorbike)) {
+          //   throw new Error('This vehicle cannot do a Wheelie');
+          // }
         }
         else if (answers.action === 'Select or create another vehicle') {
           // start the cli to return to the initial prompt if the user wants to select or create another vehicle
