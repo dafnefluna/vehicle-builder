@@ -280,8 +280,9 @@ class Cli {
           console.log('Truck cannot tow itself');
         } else {
           this.findVehicleToTow(truck);
-          this.performActions();}
-        });
+          this.performActions();
+        }
+      });
   }
 
   // method to perform actions on a vehicle
@@ -366,16 +367,15 @@ class Cli {
               this.vehicles[i].reverse();
             }
           }
-           // TODO: add statements to perform the tow action only if the selected vehicle is a truck. Call the findVehicleToTow method to find a vehicle to tow and pass the selected truck as an argument. After calling the findVehicleToTow method, you will need to return to avoid instantly calling the performActions method again since findVehicleToTow is asynchronous.
         } else if (answers.action === 'Tow') {
           if (this.vehicles instanceof Truck) {
-            this.findVehicleToTow(Truck);
+            this.findVehicleToTow;
             return;
           }
         } else if (answers.action === 'Wheelie') {
-          if (this.vehicles instanceof Motorbike){
+          if (this.vehicles instanceof Motorbike) {
             this.wheelie();
-            
+            return;
           }
         }
         else if (answers.action === 'Select or create another vehicle') {
@@ -391,6 +391,9 @@ class Cli {
           this.performActions();
         }
       });
+  }
+  wheelie() {
+    throw new Error("Method not implemented.");
   }
 
   // method to start the cli
