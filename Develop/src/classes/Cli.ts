@@ -250,7 +250,7 @@ class Cli {
           answers.model,
           parseInt(answers.year),
           parseInt(answers.weight),
-          parseInt(answers.topSpeed), 
+          parseInt(answers.topSpeed),
           [],
         );
         this.vehicles.push(motorbike);
@@ -367,35 +367,27 @@ class Cli {
               this.vehicles[i].reverse();
             }
           }
-        } else if (answers.action === 'Tow'){
-        // (this.vehicles instanceof Truck) {
-        //   if (answers.action === 'Tow') {
-        //     this.findVehicleToTow;}
-        //     else {
-        //       return; }
-          if (this.vehicles instanceof Truck) {
-            this.findVehicleToTow;
-            return;
+        } else if (answers.action === 'Tow') {
+          let truck: Truck | undefined;
+          for (let i = 0; i < this.vehicles.length; i++) {
+            if (this.vehicles[i].vin === this.selectedVehicleVin && this.vehicles[i] instanceof Truck) {
+              truck = this.vehicles[i] as Truck;
+            }
           }
-          // this.findVehicleToTow;
-          // if (!(this instanceof Truck)) {
-          //   throw new Error('this vehicle is unable to tow');
-          // }
-        } else if (this.vehicles instanceof Motorbike) {
-          answers.action === 'Wheelie';{
-            this.wheelie();
-            return;
+          if (truck) {
+            this.findVehicleToTow(truck);
           }
-          // if (this.vehicles instanceof Motorbike) {
-          //   this.wheelie();
-          //   return;
-          // }
-          // this.wheelie();
-          // if (!(this instanceof Motorbike)) {
-          //   throw new Error('This vehicle cannot do a Wheelie');
-          // }
-        }
-        else if (answers.action === 'Select or create another vehicle') {
+        } else if (answers.action === 'Wheelie') {
+          let motorbike: Motorbike | undefined;
+          for (let i = 0; i < this.vehicles.length; i++) {
+            if (this.vehicles[i].vin === this.selectedVehicleVin && this.vehicles[i] instanceof Motorbike) {
+              motorbike = this.vehicles[i] as Motorbike;
+            }
+          }
+          if (motorbike) {
+            motorbike.wheelie();
+          }
+        } else if (answers.action === 'Select or create another vehicle') {
           // start the cli to return to the initial prompt if the user wants to select or create another vehicle
           this.startCli();
           return;
@@ -409,9 +401,9 @@ class Cli {
         }
       });
   }
-  wheelie() {
-    throw new Error("Method not implemented.");
-  }
+  // wheelie() {
+  //   throw new Error("Method not implemented.");
+  // }
 
   // method to start the cli
   startCli(): void {
