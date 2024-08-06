@@ -376,6 +376,7 @@ class Cli {
           }
           if (truck) {
             this.findVehicleToTow(truck);
+            return;
           }
         } else if (answers.action === 'Wheelie') {
           let motorbike: Motorbike | undefined;
@@ -401,11 +402,7 @@ class Cli {
         }
       });
   }
-  // wheelie() {
-  //   throw new Error("Method not implemented.");
-  // }
 
-  // method to start the cli
   startCli(): void {
     inquirer
       .prompt([
