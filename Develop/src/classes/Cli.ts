@@ -279,7 +279,7 @@ class Cli {
         if (answers.value === truck) {
           console.log('Truck cannot tow itself');
         } else {
-          this.findVehicleToTow(truck);
+          truck.tow(answers.vehicleToTow)
           this.performActions();
         }
       });
@@ -376,7 +376,9 @@ class Cli {
           }
           if (truck) {
             this.findVehicleToTow(truck);
-            return;
+            return; 
+          }  else {
+            console.log ('This action is only for Trucks.')
           }
         } else if (answers.action === 'Wheelie') {
           let motorbike: Motorbike | undefined;
@@ -387,6 +389,8 @@ class Cli {
           }
           if (motorbike) {
             motorbike.wheelie();
+          } else {
+            console.log('This action is only for Motorbikes.')
           }
         } else if (answers.action === 'Select or create another vehicle') {
           // start the cli to return to the initial prompt if the user wants to select or create another vehicle

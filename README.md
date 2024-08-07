@@ -5,7 +5,7 @@
 
 The Vehicle Builder is an application that allows users to create or access an existing vehicle that offers the basic specs of the vehicle type, including its unique VIN number.  Vehicles are able to perform a series of actions as well. This app could be a good starter code for a type of car simulator game or for an ethusiast to enjoy!
 
-Please visit this link for a quick demo of how the app works: [Click Here](<https://drive.google.com/file/d/1XJKHCtUrICNnzj0AiDaedKku8xxrH-dF/view?usp=sharing>)
+Please visit this link for a quick demo of how the app works: [Click Here](<https://drive.google.com/file/d/13YHeehEvA9ZlC5hVYgpHpfYANzC-sG8v/view>)
 
 - [Installation] (#installation)
 - [Usage] (#usage)
